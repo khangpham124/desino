@@ -1,0 +1,76 @@
+[22-Apr-2019 09:36:18 UTC] PHP Strict Standards:  Declaration of JPHPMailer::setFrom() should be compatible with PHPMailer::SetFrom($address, $name = '', $auto = 1) in /home/desf36e1/public_html/test_mail/jphpmailer.php on line 26
+[22-Apr-2019 09:36:18 UTC] PHP Notice:  Undefined index: action in /home/desf36e1/public_html/test_mail/index.php on line 12
+[22-Apr-2019 09:36:18 UTC] PHP Notice:  Undefined index: name in /home/desf36e1/public_html/test_mail/index.php on line 15
+[22-Apr-2019 09:36:18 UTC] PHP Notice:  Undefined index: email in /home/desf36e1/public_html/test_mail/index.php on line 16
+[22-Apr-2019 09:36:18 UTC] PHP Notice:  Undefined index: remail in /home/desf36e1/public_html/test_mail/index.php on line 17
+[22-Apr-2019 09:36:18 UTC] PHP Notice:  Undefined index: tel in /home/desf36e1/public_html/test_mail/index.php on line 18
+[22-Apr-2019 09:36:18 UTC] PHP Notice:  Undefined index: fax in /home/desf36e1/public_html/test_mail/index.php on line 19
+[22-Apr-2019 09:36:18 UTC] PHP Notice:  Undefined index: corp in /home/desf36e1/public_html/test_mail/index.php on line 20
+[22-Apr-2019 09:36:18 UTC] PHP Notice:  Undefined index: content in /home/desf36e1/public_html/test_mail/index.php on line 21
+[22-Apr-2019 09:36:18 UTC] PHP Notice:  Undefined index: url in /home/desf36e1/public_html/test_mail/index.php on line 22
+[22-Apr-2019 09:36:18 UTC] PHP Notice:  Undefined index: gender in /home/desf36e1/public_html/test_mail/index.php on line 23
+[22-Apr-2019 09:36:18 UTC] PHP Notice:  Undefined index: check01 in /home/desf36e1/public_html/test_mail/index.php on line 24
+[22-Apr-2019 09:36:18 UTC] PHP Notice:  Undefined index: checkAll01 in /home/desf36e1/public_html/test_mail/index.php on line 25
+[22-Apr-2019 09:36:18 UTC] PHP Notice:  Undefined index: sl01 in /home/desf36e1/public_html/test_mail/index.php on line 26
+[22-Apr-2019 09:36:18 UTC] PHP Notice:  Undefined index: code in /home/desf36e1/public_html/test_mail/index.php on line 27
+[22-Apr-2019 09:36:18 UTC] PHP Notice:  Undefined index: address in /home/desf36e1/public_html/test_mail/index.php on line 28
+[22-Apr-2019 09:36:18 UTC] PHP Notice:  Undefined index: check02 in /home/desf36e1/public_html/test_mail/index.php on line 29
+[22-Apr-2019 09:36:18 UTC] PHP Notice:  Undefined index: checkAll02 in /home/desf36e1/public_html/test_mail/index.php on line 30
+[22-Apr-2019 09:36:18 UTC] PHP Notice:  Undefined index: orther in /home/desf36e1/public_html/test_mail/index.php on line 31
+[22-Apr-2019 09:36:18 UTC] PHP Warning:  include_once(/home/desf36e1/public_html/huyen/template-php/app_config.php): failed to open stream: No such file or directory in /home/desf36e1/public_html/test_mail/index.php on line 659
+[22-Apr-2019 09:36:18 UTC] PHP Warning:  include_once(): Failed opening '/home/desf36e1/public_html/huyen/template-php/app_config.php' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/desf36e1/public_html/test_mail/index.php on line 659
+[22-Apr-2019 09:36:18 UTC] PHP Notice:  Use of undefined constant APP_PATH - assumed 'APP_PATH' in /home/desf36e1/public_html/test_mail/index.php on line 660
+[22-Apr-2019 09:36:18 UTC] PHP Warning:  include_once(APP_PATHlibs/header.php): failed to open stream: No such file or directory in /home/desf36e1/public_html/test_mail/index.php on line 660
+[22-Apr-2019 09:36:18 UTC] PHP Warning:  include_once(): Failed opening 'APP_PATHlibs/header.php' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/desf36e1/public_html/test_mail/index.php on line 660
+[22-Apr-2019 09:36:18 UTC] PHP Notice:  Use of undefined constant APP_PATH - assumed 'APP_PATH' in /home/desf36e1/public_html/test_mail/index.php on line 677
+[22-Apr-2019 09:36:18 UTC] PHP Warning:  include(APP_PATHlibs/header2.php): failed to open stream: No such file or directory in /home/desf36e1/public_html/test_mail/index.php on line 677
+[22-Apr-2019 09:36:18 UTC] PHP Warning:  include(APP_PATHlibs/header2.php): failed to open stream: No such file or directory in /home/desf36e1/public_html/test_mail/index.php on line 677
+[22-Apr-2019 09:36:18 UTC] PHP Warning:  include(): Failed opening 'APP_PATHlibs/header2.php' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/desf36e1/public_html/test_mail/index.php on line 677
+[22-Apr-2019 09:36:18 UTC] PHP Notice:  Undefined variable: reg_orther in /home/desf36e1/public_html/test_mail/index.php on line 524
+[22-Apr-2019 09:36:18 UTC] PHP Notice:  Undefined variable: reg_corp in /home/desf36e1/public_html/test_mail/index.php on line 591
+[22-Apr-2019 09:36:18 UTC] PHP Notice:  Undefined variable: reg_code in /home/desf36e1/public_html/test_mail/index.php on line 605
+[22-Apr-2019 09:36:18 UTC] PHP Notice:  Undefined variable: reg_address in /home/desf36e1/public_html/test_mail/index.php on line 610
+[22-Apr-2019 09:36:18 UTC] PHP Notice:  Use of undefined constant APP_PATH - assumed 'APP_PATH' in /home/desf36e1/public_html/test_mail/index.php on line 696
+[22-Apr-2019 09:36:18 UTC] PHP Warning:  include(APP_PATHlibs/footer.php): failed to open stream: No such file or directory in /home/desf36e1/public_html/test_mail/index.php on line 696
+[22-Apr-2019 09:36:18 UTC] PHP Warning:  include(APP_PATHlibs/footer.php): failed to open stream: No such file or directory in /home/desf36e1/public_html/test_mail/index.php on line 696
+[22-Apr-2019 09:36:18 UTC] PHP Warning:  include(): Failed opening 'APP_PATHlibs/footer.php' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/desf36e1/public_html/test_mail/index.php on line 696
+[22-Apr-2019 09:36:39 UTC] PHP Strict Standards:  Declaration of JPHPMailer::setFrom() should be compatible with PHPMailer::SetFrom($address, $name = '', $auto = 1) in /home/desf36e1/public_html/test_mail/jphpmailer.php on line 26
+[22-Apr-2019 09:36:39 UTC] PHP Notice:  Undefined index: remail in /home/desf36e1/public_html/test_mail/index.php on line 17
+[22-Apr-2019 09:36:39 UTC] PHP Notice:  Undefined index: check01 in /home/desf36e1/public_html/test_mail/index.php on line 24
+[22-Apr-2019 09:36:39 UTC] PHP Notice:  Undefined index: checkAll01 in /home/desf36e1/public_html/test_mail/index.php on line 25
+[22-Apr-2019 09:36:39 UTC] PHP Notice:  Undefined index: check02 in /home/desf36e1/public_html/test_mail/index.php on line 29
+[22-Apr-2019 09:36:39 UTC] PHP Notice:  Undefined index: checkAll02 in /home/desf36e1/public_html/test_mail/index.php on line 30
+[22-Apr-2019 09:36:39 UTC] PHP Warning:  include_once(/home/desf36e1/public_html/huyen/template-php/app_config.php): failed to open stream: No such file or directory in /home/desf36e1/public_html/test_mail/index.php on line 659
+[22-Apr-2019 09:36:39 UTC] PHP Warning:  include_once(): Failed opening '/home/desf36e1/public_html/huyen/template-php/app_config.php' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/desf36e1/public_html/test_mail/index.php on line 659
+[22-Apr-2019 09:36:39 UTC] PHP Notice:  Use of undefined constant APP_PATH - assumed 'APP_PATH' in /home/desf36e1/public_html/test_mail/index.php on line 660
+[22-Apr-2019 09:36:39 UTC] PHP Warning:  include_once(APP_PATHlibs/header.php): failed to open stream: No such file or directory in /home/desf36e1/public_html/test_mail/index.php on line 660
+[22-Apr-2019 09:36:39 UTC] PHP Warning:  include_once(): Failed opening 'APP_PATHlibs/header.php' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/desf36e1/public_html/test_mail/index.php on line 660
+[22-Apr-2019 09:36:39 UTC] PHP Notice:  Use of undefined constant APP_PATH - assumed 'APP_PATH' in /home/desf36e1/public_html/test_mail/index.php on line 677
+[22-Apr-2019 09:36:39 UTC] PHP Warning:  include(APP_PATHlibs/header2.php): failed to open stream: No such file or directory in /home/desf36e1/public_html/test_mail/index.php on line 677
+[22-Apr-2019 09:36:39 UTC] PHP Warning:  include(APP_PATHlibs/header2.php): failed to open stream: No such file or directory in /home/desf36e1/public_html/test_mail/index.php on line 677
+[22-Apr-2019 09:36:39 UTC] PHP Warning:  include(): Failed opening 'APP_PATHlibs/header2.php' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/desf36e1/public_html/test_mail/index.php on line 677
+[22-Apr-2019 09:36:39 UTC] PHP Notice:  Use of undefined constant APP_PATH - assumed 'APP_PATH' in /home/desf36e1/public_html/test_mail/index.php on line 696
+[22-Apr-2019 09:36:39 UTC] PHP Warning:  include(APP_PATHlibs/footer.php): failed to open stream: No such file or directory in /home/desf36e1/public_html/test_mail/index.php on line 696
+[22-Apr-2019 09:36:39 UTC] PHP Warning:  include(APP_PATHlibs/footer.php): failed to open stream: No such file or directory in /home/desf36e1/public_html/test_mail/index.php on line 696
+[22-Apr-2019 09:36:39 UTC] PHP Warning:  include(): Failed opening 'APP_PATHlibs/footer.php' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/desf36e1/public_html/test_mail/index.php on line 696
+[22-Apr-2019 09:36:41 UTC] PHP Strict Standards:  Declaration of JPHPMailer::setFrom() should be compatible with PHPMailer::SetFrom($address, $name = '', $auto = 1) in /home/desf36e1/public_html/test_mail/jphpmailer.php on line 26
+[22-Apr-2019 09:36:41 UTC] PHP Notice:  Undefined index: remail in /home/desf36e1/public_html/test_mail/index.php on line 17
+[22-Apr-2019 09:36:41 UTC] PHP Notice:  Undefined index: check01 in /home/desf36e1/public_html/test_mail/index.php on line 24
+[22-Apr-2019 09:36:41 UTC] PHP Notice:  Undefined index: check02 in /home/desf36e1/public_html/test_mail/index.php on line 29
+[22-Apr-2019 09:36:41 UTC] PHP Warning:  date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/desf36e1/public_html/test_mail/phpmailer/class.phpmailer.php on line 1925
+[22-Apr-2019 09:36:41 UTC] PHP Warning:  date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/desf36e1/public_html/test_mail/phpmailer/class.phpmailer.php on line 1929
+[22-Apr-2019 09:36:41 UTC] PHP Warning:  date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/desf36e1/public_html/test_mail/phpmailer/class.phpmailer.php on line 1925
+[22-Apr-2019 09:36:41 UTC] PHP Warning:  date(): It is not safe to rely on the system's timezone settings. You are *required* to use the date.timezone setting or the date_default_timezone_set() function. In case you used any of those methods and you are still getting this warning, you most likely misspelled the timezone identifier. We selected the timezone 'UTC' for now, but please set date.timezone to select your timezone. in /home/desf36e1/public_html/test_mail/phpmailer/class.phpmailer.php on line 1929
+[22-Apr-2019 09:36:41 UTC] PHP Warning:  include_once(/home/desf36e1/public_html/huyen/template-php/app_config.php): failed to open stream: No such file or directory in /home/desf36e1/public_html/test_mail/indexThx.php on line 2
+[22-Apr-2019 09:36:41 UTC] PHP Warning:  include_once(): Failed opening '/home/desf36e1/public_html/huyen/template-php/app_config.php' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/desf36e1/public_html/test_mail/indexThx.php on line 2
+[22-Apr-2019 09:36:41 UTC] PHP Notice:  Use of undefined constant APP_PATH - assumed 'APP_PATH' in /home/desf36e1/public_html/test_mail/indexThx.php on line 3
+[22-Apr-2019 09:36:41 UTC] PHP Warning:  include_once(APP_PATHlibs/header.php): failed to open stream: No such file or directory in /home/desf36e1/public_html/test_mail/indexThx.php on line 3
+[22-Apr-2019 09:36:41 UTC] PHP Warning:  include_once(): Failed opening 'APP_PATHlibs/header.php' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/desf36e1/public_html/test_mail/indexThx.php on line 3
+[22-Apr-2019 09:36:41 UTC] PHP Notice:  Use of undefined constant APP_PATH - assumed 'APP_PATH' in /home/desf36e1/public_html/test_mail/indexThx.php on line 20
+[22-Apr-2019 09:36:41 UTC] PHP Warning:  include(APP_PATHlibs/header2.php): failed to open stream: No such file or directory in /home/desf36e1/public_html/test_mail/indexThx.php on line 20
+[22-Apr-2019 09:36:41 UTC] PHP Warning:  include(APP_PATHlibs/header2.php): failed to open stream: No such file or directory in /home/desf36e1/public_html/test_mail/indexThx.php on line 20
+[22-Apr-2019 09:36:41 UTC] PHP Warning:  include(): Failed opening 'APP_PATHlibs/header2.php' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/desf36e1/public_html/test_mail/indexThx.php on line 20
+[22-Apr-2019 09:36:41 UTC] PHP Notice:  Use of undefined constant APP_PATH - assumed 'APP_PATH' in /home/desf36e1/public_html/test_mail/indexThx.php on line 47
+[22-Apr-2019 09:36:41 UTC] PHP Warning:  include(APP_PATHlibs/footer.php): failed to open stream: No such file or directory in /home/desf36e1/public_html/test_mail/indexThx.php on line 47
+[22-Apr-2019 09:36:41 UTC] PHP Warning:  include(APP_PATHlibs/footer.php): failed to open stream: No such file or directory in /home/desf36e1/public_html/test_mail/indexThx.php on line 47
+[22-Apr-2019 09:36:41 UTC] PHP Warning:  include(): Failed opening 'APP_PATHlibs/footer.php' for inclusion (include_path='.:/opt/alt/php55/usr/share/pear:/opt/alt/php55/usr/share/php') in /home/desf36e1/public_html/test_mail/indexThx.php on line 47
