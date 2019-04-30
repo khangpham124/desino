@@ -20,6 +20,7 @@ while($wp_query->have_posts()) :$wp_query->the_post();
         header('Location:'.$reg_url);
     }
     else {
+        $_SESSION['err_signup'] = "Email or Passord is not correct";
         header('Location:'.APP_URL.'error');
     }
 endwhile;

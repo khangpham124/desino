@@ -1,22 +1,22 @@
 <?php
 include($_SERVER["DOCUMENT_ROOT"] . "/app_config.php");
-include(APP_PATH."libs/header.php"); 
+include(TEMPLATEPATH."/libs/header.php"); 
 ?>
-<meta http-equiv="REFRESH" content="3; url=<?php echo esc_url( home_url( '/' ) )?>">
+<meta http-equiv="REFRESH" content="3; url=<?php echo APP_URL; ?>">
 </head>
 
 <body id="top">
-<?php include(APP_PATH."libs/pageload.php"); ?>
+<?php include(TEMPLATEPATH."/libs/pageload.php"); ?>
 <!--===================================================-->
 <div id="wrapper">
 <!--===================================================-->
 <!--Header-->
-<?php include(APP_PATH."libs/header2.php"); ?>
+<?php include(TEMPLATEPATH."/libs/header2.php"); ?>
 <!--/Header-->
 
 <div id="container" class="clearfix">
-	<?php include(APP_PATH."libs/sidebar.php"); ?>
-	<div id="mainContent" class="pc">
+	<?php include(TEMPLATEPATH."/libs/sidebar.php"); ?>
+	<div id="mainContent">
 		<p class="txt404">Sorry ! Page not found</p>
     </div>
 	
@@ -27,27 +27,11 @@ include(APP_PATH."libs/header.php");
 
 
 <!--Footer-->
-<?php include(APP_PATH."libs/footer.php"); ?>
+<?php include(TEMPLATEPATH."/libs/footer.php"); ?>
 <!--/Footer-->
 <!--===================================================-->
 </div>
 <!--/wrapper-->
 <!--===================================================-->
-<script>
-	$(function() {
- 	var h = $( window ).height();
-    var h_elm = $('#wrapper').height();
-    var pad = ( h - h_elm ) / 2;
-    $('#wrapper').css('padding-top',pad + 'px');
-	$(window).resize(function(){	
-	var h = $( window ).height();
-    var h_elm = $('#wrapper').height();
-    var pad = ( h - h_elm ) / 2;
-    $('#wrapper').css('padding-top',pad + 'px');
-	});
-	});
-</script>
-
-
 </body>
 </html>	

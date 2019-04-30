@@ -74,6 +74,7 @@ $(".addToCard").click(function() {
         success: function(data) {
             var start = readCookie('incart');
             $('.numbCart').html(start);
+            $(".addToCard").removeClass('disable');
         }
     })
 });
@@ -113,4 +114,51 @@ $('.methodPay').click(function() {
     } else if (methodPay == null) {
         alert('Please choose a payment method');
     }
+});
+
+$(".addToWish").click(function() {
+    var isThis = $(this);
+    var id_pro = isThis.attr('data-id');
+    var getCL = isThis.attr('data-color');
+    var color = getCL.replace('#', '');
+    isThis.html('<i class="fa fa-spinner fa-spin"></i> Loading...');
+    setTimeout(function() {
+        isThis.html('<i class="fa fa-shopping-cart"></i> Added');
+        isThis.addClass('disable');
+    }, 500);
+    $.ajax({
+        data: {},
+        url: '/ajax/addwish.php?proid=' + id_pro +'&color=' + color + '&action=add',
+        type: 'GET',
+        success: function(data) {
+        }
+    })
+});
+
+$('.removeList').click(function() {
+    var itemDel = $(this).attr('data-id');
+    $(this).parent().parent().remove();
+    $.ajax({
+        data: {},
+        url: '/ajax/addwish.php?proid=' + itemDel + '&action=remove',
+        type: 'GET',
+        success: function(data) {
+            
+        }
+    })
+});
+
+$('.removeItem').click(function() {
+var itemDel = $(this).attr('data-id');
+var itemCost = $(this).attr('data-quan');
+$(this).parent().parent().remove();
+$.ajax({
+    data: {},
+    url: '/ajax/edit_json.php?proid=' + itemDel + '&qual=' + itemCost,
+    type: 'GET',
+    success: function(data) {
+        var start = readCookie('incart');
+        $('.numbCart').html(start);
+    }
+})
 });

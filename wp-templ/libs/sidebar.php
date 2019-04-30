@@ -46,8 +46,9 @@
 
 			<?php if ($_SESSION['login']) { ?>
 				<ul class="lstSidebar">
+					<li><a class="btnShopping pc" href="<?php echo APP_URL; ?>order-check/"><i class="fa fa-list-alt" aria-hidden="true"></i>CHECK ORDER</a></li>
 					<!-- <li><a class="btnShopping pc callPopup" href="javascript:void(0)"><i class="fa fa-user-circle-o" aria-hidden="true"></i>LOGIN|SIGN UP</a></li> -->
-					<li><a class="btnShopping pc" href="<?php echo APP_URL; ?>account"><i class="fa fa-user-circle-o" aria-hidden="true"></i>MY ACCOUNT</a></li>
+					<li><a class="btnShopping pc" href="<?php echo APP_URL; ?>account/"><i class="fa fa-user-circle-o" aria-hidden="true"></i>MY ACCOUNT</a></li>
 					<!-- <li><a class="btnShopping pc" href="<?php echo APP_URL; ?>logout.php"><i class="fa fa-user-circle-o" aria-hidden="true"></i>SIGN OUT</a></li> -->
 					<li><a class="btnShopping pc" href="<?php echo APP_URL; ?>cart/"><i class="fa fa-shopping-bag" aria-hidden="true"></i>YOUR CART &nbsp;(<span class="numbCart">0</span>)</a> </li>
 				</ul>
@@ -100,6 +101,7 @@
 
 			<?php if ($_SESSION['login']) { ?>
 				<ul class="lstSidebar">
+					<li><a class="btnShopping pc" href="<?php echo APP_URL; ?>order-check/"><i class="fa fa-list-alt" aria-hidden="true"></i>ĐƠN HÀNG</a></li>
 					<!-- <li><a class="btnShopping pc callPopup" href="javascript:void(0)"><i class="fa fa-user-circle-o" aria-hidden="true"></i>ĐĂNG NHẬP|ĐĂNG KÝ</a></li> -->
 					<li><a class="btnShopping pc" href="<?php echo APP_URL; ?>account"><i class="fa fa-user-circle-o" aria-hidden="true"></i>TÀI KHOẢN</a></li>
 					<!-- <li><a class="btnShopping pc" href="<?php echo APP_URL; ?>logout.php"><i class="fa fa-user-circle-o" aria-hidden="true"></i>THOÁT</a></li> -->

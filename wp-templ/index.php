@@ -55,7 +55,7 @@ include(TEMPLATEPATH."/libs/header.php");
 					$img = wp_get_attachment_image_src( get_field( 'banner', 'productcat_'.$term_id.''),'productBanner');
 					$img_full = wp_get_attachment_image_src( get_field( 'banner', 'productcat_'.$term_id.''),'full');
 					?>
-				<a href="<?php echo APP_URL; ?>women">
+				<a href="<?php echo get_term_link('women','productcat');?>">
                     <img src="<?php echo thumbCrop($img_full[0],800,800); ?>" class="imgMax" alt="" >
                  
                     <div class="txt">
@@ -80,7 +80,7 @@ include(TEMPLATEPATH."/libs/header.php");
 					$img = wp_get_attachment_image_src( get_field( 'banner', 'productcat_'.$term_id.''),'productBanner');
 					$img_full = wp_get_attachment_image_src( get_field( 'banner', 'productcat_'.$term_id.''),'full');
 					?>
-				<a href="<?php echo APP_URL; ?>men">
+				<a href="<?php echo get_term_link('men','productcat');?>">
                     <img src="<?php echo thumbCrop($img_full[0],800,800); ?>" class="imgMax" alt="" >
                    
 					<div class="txt">

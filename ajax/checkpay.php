@@ -124,11 +124,20 @@ function getResponseDescription($responseCode) {
         case "21" :
             $result = "Số tiền không đủ để thanh toán - Insufficient fund";
             break;
+        case "24" :
+			$result = "Thông tin thẻ không đúng - Invalid Card Info";
+			break;
+		case "25" :
+			$result = "OTP không đúng - Invalid OTP";
+			break;
+		case "253" :
+			$result = "Quá thời gian thanh toán - Transaction Time out";
+			break;    
         case "99" :
             $result = "Người sủ dụng hủy giao dịch - User cancel";
             break;
         default :
-            $result = "Giao dịch thất bại - Failured";
+            $result = "Unable to be determined";
     }
     return $result;
 }
@@ -149,10 +158,10 @@ if($_SESSION['payment']=='atm') {
         $_SESSION['transactionNo'] = $transactionNo;
         header("Location: ".urlConfirm);
     }elseif ($hashValidated=="INVALID HASH" && $txnResponseCode=="0"){
-        $_SESSION['err_pend'] = $message. "Your payment is pending. Please try again.";
-        header("Location: ".urlError);
+        $_SESSION['err_pend'] = getResponseDescription($txnResponseCode);
+        header("Location: ".urlPending);
     }else {
-        $_SESSION['err_fail'] = $message. "Your payment is fail. Please check and try again.";
+        $_SESSION['err_fail'] = getResponseDescription($txnResponseCode);
     header("Location: ".urlError);
     } 
 ?>
@@ -267,10 +276,10 @@ if($_SESSION['payment']=='atm') {
         $_SESSION['transactionNo'] = $merchTxnRef;
         header("Location: ".urlConfirm);
     }elseif ($hashValidated=="INVALID HASH" && $txnResponseCode=="0"){
-        $_SESSION['err_pend'] = $txnResponseCode . "Your payment is pending. Please try again.";
-        header("Location: ".urlConfirm);
+        $_SESSION['err_pend'] = getResponseDescription($txnResponseCode);
+        header("Location: ".urlPending);
     }else {
-        $_SESSION['err_fail'] = $txnResponseCode . "Your payment is failed. Please check and try again.";
+        $_SESSION['err_fail'] = getResponseDescription($txnResponseCode);
         header("Location: ".urlError);
     }
 

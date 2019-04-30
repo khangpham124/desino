@@ -1,10 +1,10 @@
 <?php
 include($_SERVER["DOCUMENT_ROOT"] . "/app_config.php");
-$_SESSION['fullname']= htmlspecialchars($_POST['fullname']);
-$_SESSION['address']= htmlspecialchars($_POST['address']);
-$_SESSION['phone']= htmlspecialchars($_POST['phone']);
-$_SESSION['mail']= htmlspecialchars($_POST['mail']);
-$_SESSION['note']= htmlspecialchars($_POST['note']);
+$_SESSION['fullname']= htmlspecialchars($_POST['fullname_chk']);
+$_SESSION['address']= htmlspecialchars($_POST['address_chk']);
+$_SESSION['mobile']= htmlspecialchars($_POST['mobile_chk']);
+$_SESSION['mail']= htmlspecialchars($_POST['mail_chk']);
+$_SESSION['note']= htmlspecialchars($_POST['comt_order']);
 $_SESSION['order_des']= $_POST['order_des'];
 $_SESSION['payment']= $_POST['payment'];
 include(APP_PATH_WP."/wp-load.php");
@@ -41,27 +41,8 @@ $stringHashData = "";
 // sắp xếp dữ liệu theo thứ tự a-z trước khi nối lại
 // arrange array data a-z before make a hash
 // echo $_POST['order_des'];
-$f_isset = $_SERVER['DOCUMENT_ROOT'].'/ajax/tmp/'.$_POST['order_des'].'.json';
-$curr_cart  = json_decode(file_get_contents($f_isset));
-// var_dump($curr_cart);
-$arr_price = array();
-foreach($curr_cart as $mydata)
-{
-    if(get_field('special-offer',$mydata->id)!=0) {
-        $price_real = get_field('price',$mydata->id);
-        $promo = get_field('special-offer',$mydata->id);
-        $price_dis = ($price_real * $promo) / 100;
-        $price_no = $price_real - $price_dis;
-    }else{
-        $price_no = get_field('price',$mydata->id);
-    }
-    $count_price = ($mydata->quantity * $price_no);
-    $arr_price[] = $count_price;
-    $amount = $price_no * $mydata->quantity;
-}
 
-$_SESSION['amount']= $amount;
-
+$amount = $_SESSION["total"];
 
 $arr = array() ;
 $arr['vpc_OrderInfo'] = $_POST['order_des'];
@@ -72,7 +53,7 @@ $arr['vpc_MerchTxnRef'] = date ( "YmdHis" ).rand () ;
 $arr['vpc_Amount'] = $amount * 100;
 $arr['vpc_Version'] = "2";
 $arr['vpc_Command'] = "pay";
-$arr['vpc_Locale'] = "vn";
+$arr['vpc_Locale'] = "en";
 $arr['vpc_Currency'] = "VND";
 
 ksort ($arr);

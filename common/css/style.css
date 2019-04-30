@@ -279,6 +279,7 @@
     margin-top: 20px;
     border: none;
     outline: none;
+    border-radius: 5px;
 }
 
 .btnPage:hover {
@@ -335,6 +336,12 @@
     font-weight: 500;
     font-size: 20px;
     margin-bottom: 10px;
+}
+
+.h4_page {
+    font-weight: 500;
+    font-size: 12px;
+    margin:25px 0 10px;
 }
 
 .lstCart {
@@ -516,7 +523,19 @@
 .messErr {
     color: #eb2727;
     font-weight: bold;
-    font-size: 13px;
+    font-size: 12px;
+    margin-top: 15px;
+    display: block;
+}
+
+.messErr_text {
+    color: #eb2727;
+    font-size: 11px;
+}
+
+#account .messErr {
+    font-size: 11px;
+    margin-bottom: 10px;
 }
 
 .infoVisa {
@@ -543,6 +562,221 @@
     width: 30%;
     text-align: center;
     margin-right: 3%;
+}
+
+.popUp {
+    position: fixed;
+    background: #fff;
+    top:50%;
+    left: 50%;
+    width: 30%;
+    transform: translateX(-50%) translateY(-50%);
+    padding: 30px;
+    z-index: 550;
+    display: none;
+    -moz-transition:all 0.4s ease-out;
+    -o-transition:all 0.4s ease-out;
+    -webkit-transition:all 0.4s ease-out;
+    -ms-transition:all 0.4s ease-out;
+}
+
+#formsignUp {
+    margin-top: -25px;
+    z-index: 500;
+    opacity: 0;
+}
+
+.popUp img {
+    height: 40px;
+    margin-bottom: 20px;
+}
+
+.popUp .btnPage {
+    width: 100%;
+    margin-top: 10px;
+    margin-bottom: 20px;
+}
+
+.popUp a.link {
+    color: #9f9f9f;
+    text-decoration: underline;
+}
+
+.popUp span {
+    display: block;
+    text-align: center;
+}
+
+.overlay {
+    background: rgba(0,0,0,.7);
+    position: fixed;
+    top:0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 500;
+    display: none;
+}
+
+.checkStyle {
+    display: block;
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    font-size: 12x;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #9f9f9f;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .checkStyle input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 2px;
+    height: 20px;
+    width: 20px;
+    background-color: #eee;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .checkStyle:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .checkStyle input:checked ~ .checkmark {
+    background-color: #000;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .checkStyle input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .checkStyle .checkmark:after {
+    left: 5px;
+    top: 3px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  .wrapPop {
+      flex-wrap: inherit;
+  }
+
+.wrapPop .showForm {
+    width: 100%;
+}  
+
+.btnRemove {
+    padding: 10px 25px;
+    margin-top: 15px;
+}
+
+.tabBox {
+    display: none;
+}
+
+.tabItem--4 li {
+    width: 25%;
+    padding: 15px 0;
+    text-align: center;
+    opacity: .7;
+}
+
+.tabItem--4 li a {
+    display: inline-block;
+    padding: 10px;
+}
+
+.tabItem--4 li.active {
+    opacity: 1;
+}
+
+.tabItem--4 li.active a {
+    background: #000;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.tblAccount {
+    width: 100%;
+    border: 1px solid #ccc;
+}
+
+.tblAccount thead {
+    background: #000;
+    color: #fff;
+}
+
+.tblAccount th {
+    width: 25%;
+    border: 1px solid #ccc;
+    padding: 10px;
+    vertical-align: top;
+}
+
+.tblAccount tr td {
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+
+.tblAccount tr td a {
+    text-decoration: underline;
+}
+
+#account #formLogin {
+    display: none;
+}
+
+#account #formsignUp {
+    display: none;
+}
+
+/* #account .lstCart li {
+    width: 100%;
+} */
+
+#formCheckOrder {
+    margin-bottom: 30px;
+}
+
+#formCheckout .btnPage {
+    margin-top: 0;
+    cursor: pointer;
+}
+.boxBtn{
+    margin-top: 20px;
+}
+
+.mt30 {
+    margin-top: 30px;
 }
 
 @media (max-width:767px){#sidebar-sticky-wrapper{display:none;}
@@ -604,5 +838,32 @@
 
 .lstCollect li .wrap .contBlog i {
 	display:none;
+}
+
+.popUp {
+    width: 90%;
+    z-index: 1000;
+}
+
+.btnPage {
+    font-size: 11px;
+}
+
+.priceCols .btnPage {
+    width: 48%;
+}
+
+.lstCart li {
+    width: 100%;
+}
+
+.leftCheck {
+    width: 100%;
+    margin-bottom: 25px;
+}
+
+.checkOutcontent {
+    flex-wrap: wrap;
+    flex-direction: column-reverse;
 }
 }

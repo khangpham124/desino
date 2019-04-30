@@ -187,26 +187,25 @@ include(TEMPLATEPATH."/mailer/class.smtp.php");
             }
             // AFTER SUBMIT
             unlink($f_isset);
-            $_SESSION['payment'] = '';
         ?>
-        
-        <h3 class="h3_page mt30">Order Detail</h3>
+        <section class="maxW maxW--small">
+            <h3 class="h3_page">Order Detail</h3>
             <table class="tblAccount">
                 <tr>
                     <th>Order ID</th>
-                    <td><?php echo get_the_title($pid); ?></td>
+                    <td><?php the_title(); ?></td>
                 </tr>
                 <tr>
                     <th>Date of order</th>
-                    <td><?php echo get_the_time('d/m/Y',$pid); ?></td>
+                    <td><?php the_time('d/m/Y'); ?></td>
                 </tr>
                 <tr>
                     <th>Shipping Info</th>
                     <td>
-                        <?php echo get_field('cf_fullname',$pid); ?><br>
-                        <?php echo get_field('cf_address',$pid); ?><br>
-                        <?php echo get_field('cf_phone',$pid); ?><br>
-                        <?php echo get_field('cf_mail',$pid); ?><br>
+                        <?php the_field('cf_fullname'); ?><br>
+                        <?php the_field('cf_address'); ?><br>
+                        <?php the_field('cf_phone'); ?><br>
+                        <?php the_field('cf_mail'); ?><br>
                     </td>
                 </tr>
 
@@ -214,7 +213,7 @@ include(TEMPLATEPATH."/mailer/class.smtp.php");
                     <th>Products</th>
                     <td>
                     <?php 
-                        $l_Order = get_field('order_list',$pid);
+                        $l_Order = get_field('order_list');
                         $arr_ids = array();
                         $arr_qty = array();
                         
@@ -227,14 +226,16 @@ include(TEMPLATEPATH."/mailer/class.smtp.php");
                         ?>
                         <ul class="lstCart">
                             <?php
-                                $i=0;
-                                $param = array (
-                                'post_type' => 'product',
-                                'orderby' => 'post__in', 
-                                'post__in'=> $arr_ids
-                                );
-                                $posts_array = get_posts( $param );
-                                foreach ($posts_array as $pro ) {
+                            $i=0;
+                                    $param = array (
+                                        'posts_per_page' => '-1',
+                                        'post_type' => 'product', 
+                                        'post_status' => 'publish',
+                                        'order' => 'DESC',
+                                        'post__in'=> $arr_ids
+                                        );
+                                        $posts_array = get_posts( $param );
+                                        foreach ($posts_array as $pro ) {
                                     $thumb = get_post_thumbnail_id($pro->ID);
                                     $img_label = wp_get_attachment_image_src($thumb,'full');
                                     $promo = get_field('special-offer',$pro->ID);
@@ -246,48 +247,50 @@ include(TEMPLATEPATH."/mailer/class.smtp.php");
                                         $price = get_field('price',$pro->ID);
                                     }
                             ?>
-                            <li class="flexBox flexBox--nosp">
-                                <p class="thumb"><img src="<?php echo thumbCrop($img_label[0],140,140); ?>" class="" alt="<?php echo $pro->post_title; ?>"></p>	
-                                <div class="info">
-                                    <p class="name"><a href="<?php echo get_permalink($pro->ID); ?>"><?php echo $pro->post_title; ?></a></p>
-                                    <table>
-                                        <tr>
-                                            <th>QTY</th>
-                                            <td class="qtyNumb"><?php echo $arr_qty[$i]; ?></td>
-                                        </tr>
-                                        <tr>
-                                            <th>PRICE</th>
-                                            <td><?php if($promo!=0) { ?><em><?php echo $price_real; ?></em><?php } ?><?php echo number_format($price); ?> VND</td>
-                                        </tr>
-                                        <tr>
-                                            <th class="totalCost">SUB TOTAL</th>
-                                            <td class="totalCost"><?php echo number_format($price * $arr_qty[$i]); ?> VND</td>
-                                        </tr>
-                                    </table>
-                                </div>
-                            </li>
-                            <?php $i++; } ?>
-                        </ul>
+                                <li class="flexBox flexBox--nosp">
+                                    <p class="thumb"><img src="<?php echo thumbCrop($img_label[0],140,140); ?>" class="" alt="<?php echo $pro->post_title; ?>"></p>	
+                                    <div class="info">
+                                        <p class="name"><a href="<?php the_permalink(); ?>"><?php echo $pro->post_title; ?></a></p>
+                                        <table>
+                                            <tr>
+                                                <th>QTY</th>
+                                                <td class="qtyNumb"><?php echo $arr_qty[$i]; ?></td>
+                                            </tr>
+                                            <tr>
+                                                <th>PRICE</th>
+                                                <td><?php if($promo!=0) { ?><em><?php echo $price_real; ?></em><?php } ?><?php echo number_format($price); ?> VND</td>
+                                            </tr>
+                                            <tr>
+                                                <th class="totalCost">SUB TOTAL</th>
+                                                <td class="totalCost"><?php echo number_format($price * $arr_qty[$i]); ?> VND</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </li>
+                                <?php $i++; } ?>
+                            </ul>
                     </td>
                 </tr>
                 <?php wp_reset_query(); ?>
                 <tr>
                     <th>Total</th>
-                    <td><?php echo number_format(get_field('cf_total',$pid)); ?> VND</td>
+                    <td><?php echo number_format(get_field('cf_total')); ?> VND</td>
                 </tr>
 
                 <tr>
                     <th>Payment status</th>
                     <td>
-                        Paid via <?php echo get_field('method',$pid); ?><br>
+                        Transaction Number:<?php the_field('transaction_number'); ?><br>
+                        Paid via <?php the_field('method'); ?><br>
                     </td>
                 </tr>
 
                 <tr>
                     <th>Order status</th>
-                    <td><?php echo get_field('cf_order_status',$pid); ?></td>
+                    <td><?php echo get_field('cf_order_status'); ?></td>
                 </tr>
             </table>
+        </section>
         <?php  } ?>
 	</div>
       

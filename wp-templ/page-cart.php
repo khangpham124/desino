@@ -62,6 +62,7 @@ include(TEMPLATEPATH."/libs/header.php");
 							$thumb = $getImg[$key_img]['slide'][0]['img'];
 													
 							$img_label = wp_get_attachment_image_src($thumb,'full');
+							
 							$promo = get_field('special-offer');
 							if($promo!=0) {
 								$price_real = get_field('price');

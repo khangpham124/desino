@@ -134,6 +134,11 @@ if($action=='login') {
                         <label>Address</label>
                         <input type="mail" name="address" value="<?php echo get_field('address',$_SESSION['idcustomer']); ?>" id="address_acc" class="inputText">
                     </p>
+                    <input type="hidden" name="url" value="<?php echo $actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>" >
+                    <input type="submit" name="submit" class="btnPage" value="Update">
+                </form>  
+
+                <form action="<?php echo APP_URL; ?>ajax/editCustomer.php" class="formChk" method="post" id="formChange" autocomplete="off">  
                     <h4 class="h4_page">CHANGE PASSWORD</h4>
                     <p class="inputForm">
                         <label>Old Password<span>(*)</span></label>
@@ -145,8 +150,9 @@ if($action=='login') {
                         <input type="password" name="password" value="" autocomplete="off" id="pass_acc" class="inputText">
                     </p>
                     <input type="hidden" name="url" value="<?php echo $actual_link = "https://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]"; ?>" >
-                    <input type="submit" name="submit" class="btnPage" value="Update">
-                </form>    
+                    <input type="submit" name="submit" class="btnPage" value="CHANGE">
+                </form>      
+                        
                 </div>
                 <div class="tabBox" id="tab2">
                     <table class="tblAccount">
@@ -264,6 +270,7 @@ if($action=='login') {
 <script type="text/javascript" src="<?php echo APP_URL; ?>checkform/exchecker-ja.js"></script>
 <script>
 $(function(){
+    $('#old_password').removeClass('chkrequired errPosRight err');
 	  $("#formAccount").exValidation({
 	    rules: {
             old_password: "chkrequired",
@@ -272,7 +279,7 @@ $(function(){
 	    scrollToErr: true,
 	    errHoverHide: true
       });
-    $('#old_password').removeClass('chkrequired errPosRight err');
+    
 
     $('input[type=password][name=password]').keyup(function() {
         if (this.value != '') {

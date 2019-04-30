@@ -1,11 +1,13 @@
+<?php /* Template Name: Check */ ?>
 <?php
 include($_SERVER["DOCUMENT_ROOT"] . "/app_config.php");
 if(!$_SESSION['login']) {    
     header('Location:'.APP_URL);
 }
 include(TEMPLATEPATH."/libs/header.php"); 
-$action = $_GET['action'];
+$order = $_POST['orderNo'];
 ?>
+<link rel="stylesheet" href="<?php echo APP_URL; ?>checkform/exvalidation.css" media="all">
 </head>
 <body id="account" class="subPage">
 <?php include(TEMPLATEPATH."/libs/pageload.php"); ?>
@@ -19,7 +21,27 @@ $action = $_GET['action'];
 <div id="container" class="clearfix">
 	<?php include(TEMPLATEPATH."/libs/sidebar.php"); ?>
 	<div id="mainContent">
-        <section class="maxW maxW--small">
+    <section class="maxW maxW--small">
+        <form action="" class="formChk" method="post" id="formCheckOrder">
+            <h3 class="h3_checkout">ORDER ID</h3>				
+            <p class="inputForm">
+                <label>Your Order ID<span>(*)</span></label>
+                <input type="text" name="orderNo" value="" id="orderid_chk" class="inputText">
+            </p>
+            <button class="btnPage">CHECK</button>
+        </form>
+        <?php
+        if($order) {
+        $wp_query = new WP_Query();
+        $param = array (
+        's' => $order,	
+        'posts_per_page' => '1',
+        'post_type' => 'getorder',
+        'post_status' => 'publish',
+        );
+        $wp_query->query($param);
+        if($wp_query->have_posts()) { ?>
+        <?php while($wp_query->have_posts()) : $wp_query->the_post();?>
             <h3 class="h3_page">Order Detail</h3>
             <table class="tblAccount">
                 <tr>
@@ -43,7 +65,7 @@ $action = $_GET['action'];
                 <tr>
                     <th>Products</th>
                     <td>
-                    <?php 
+                        <?php 
                         $l_Order = get_field('order_list');
                         $arr_ids = array();
                         $arr_qty = array();
@@ -102,7 +124,6 @@ $action = $_GET['action'];
                             </ul>
                     </td>
                 </tr>
-                <?php wp_reset_query(); ?>
                 <tr>
                     <th>Total</th>
                     <td><?php echo number_format(get_field('cf_total')); ?> VND</td>
@@ -121,6 +142,10 @@ $action = $_GET['action'];
                     <td><?php echo get_field('cf_order_status'); ?></td>
                 </tr>
             </table>
+        <?php endwhile; } else { ?>
+            Order is not exists !
+        <?php } } ?>
+
         </section>
     </div>  
 </div>
@@ -134,5 +159,43 @@ $action = $_GET['action'];
 </div>
 <!--/wrapper-->
 <!--===================================================-->
+<script type="text/javascript" src="<?php echo APP_URL; ?>checkform/exvalidation.js"></script>
+<script type="text/javascript" src="<?php echo APP_URL; ?>checkform/exchecker-ja.js"></script>
+<script>
+$(function(){
+	  $("#formAccount").exValidation({
+	    rules: {
+            old_password: "chkrequired",
+	    },
+	    stepValidation: true,
+	    scrollToErr: true,
+	    errHoverHide: true
+      });
+    $('#old_password').removeClass('chkrequired errPosRight err');
+
+    $('input[type=password][name=password]').keyup(function() {
+        if (this.value != '') {
+            $('#old_password').addClass('chkrequired errPosRight err');
+        } else {
+            $('#old_password').removeClass('chkrequired errPosRight err');
+        }
+    });
+});
+</script>
+
+<script type="text/javascript">
+$(function(){
+	$('#tab1').show();
+    $('.tabItem li:nth-child(1)').addClass('active');
+    $('.tabItem li').click(function() {
+        $('.tabItem li').removeClass('active');
+        $(this).toggleClass('active');
+        var tabId = $(this).find('a').attr('data-id');
+        $('.tabBox').fadeOut(200);
+        $('#'+tabId).fadeIn(200);
+    });
+});
+</script>
+
 </body>
 </html>	
